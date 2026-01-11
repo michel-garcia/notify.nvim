@@ -19,7 +19,7 @@ M.opts = {
 }
 
 M.setup = function(opts)
-    M.opts = vim.tbl_deep_extend("force", M.opts, opts)
+    M.opts = vim.tbl_deep_extend("force", M.opts, opts or {})
     vim.validate("border", M.opts.border, function(value)
         if type(value) == "table" then
             return true
